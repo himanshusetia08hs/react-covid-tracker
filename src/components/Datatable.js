@@ -9,14 +9,14 @@ class Datatable extends Component {
         // destructuring of props as they are implemented using hooks
         const { state, districts } = this.props;
 
-        // console.log("Props",this.props);
-        // console.log("Hello",state,districts.data[state]);
+        //  console.log("Props",this.props);
+        //  console.log("Hello",state,districts.data[state]);
 
         return (
             
             <Table striped bordered hover size="sm" responsive style={{ margin: "0px",padding:"0px" }}>
-                <font size="2"  >
-                    <thead>
+                {/* <font size="2"  > */}
+                    <tbody>
 
                         <tr style={{background:"light"}}>
                             <th>District</th>
@@ -33,10 +33,10 @@ class Datatable extends Component {
                                 if((value=== "Unknown")||(value === "unknown"))
                                     return null;
                                     
-                                // console.log(districts.data[state].districtData[value]);
-                                // console.log(value);  // it contains districts
+                                //  console.log(districts.data[state].districtData[value]);
+                                //  console.log(value);  // it contains districts
                                 return (
-                                    <tr>
+                                    <tr key={value + 1}>
                                         <td>{value}</td>
                                         <td>{districts.data[state].districtData[value].active}</td>
                                         <td>
@@ -74,8 +74,8 @@ class Datatable extends Component {
                             
                         }
 
-                    </thead>
-                </font>  
+                    </tbody>
+                {/* </font>   */}
             </Table>
         )
     }
